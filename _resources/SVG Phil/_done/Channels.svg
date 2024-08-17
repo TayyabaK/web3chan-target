@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 283.5 283.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #08021c;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Layer_1-2" data-name="Layer 1-2">
+      <path class="cls-1" d="M110.4-286.1h-18.1"/>
+      <path class="cls-1" d="M182.9-286.1h-18.1"/>
+      <path class="cls-1" d="M254.1,89v-20.3h-20.3v-20.3h-81.2v20.3h-40.6v-20.3H30.7v20.3H10.4v142.1h20.3v20.3h20.3v19.8h60.9v-20.3l60.9-.5v20.8h81.2v-40.1s20.3,0,20.3,0v-121.8h-20.3Z"/>
+    </g>
+  </g>
+  <g id="Layer_1-3" data-name="Layer 1">
+    <g id="Layer_1-2-2" data-name="Layer 1-2">
+      <path class="cls-1" d="M110.4-286.1h-18.1"/>
+      <path class="cls-1" d="M182.9-286.1h-18.1"/>
+      <path class="cls-2" d="M91.7,210.9h-40.6v-40.6h40.6v20.3h0v20.3ZM233.8,170.2h-20.3v40.6h-40.6v-40.6h40.6v-20.3h-40.6v20.3h-20.3v-20.3h-40.6v20.3h-20.3v-20.3h-40.6v20.3h-20.3v-81.2h20.3v-20.3h40.6v20.3h20.3v20.3h40.6v-20.3h20.3v-20.3h40.6v20.3h20.3v81.2h0Z"/>
+    </g>
+  </g>
+</svg>

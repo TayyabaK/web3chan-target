@@ -1,0 +1,128 @@
+/******** Filament Override Styles ********/
+
+/**** Modal Styles ****/
+.fi-modal-close-overlay {
+    @apply bg-brand-darkest/80 backdrop-blur-sm;
+}
+
+.fi-modal-header {
+    @apply p-0 text-center text-white m-auto z-0;
+}
+
+.fi-modal-heading {
+    @apply text-2xl font-bold text-white mt-6;
+}
+
+.fi-modal-window {
+    @apply w-full rounded-none bg-brand-darkest md:bg-brand-secondary text-center;
+}
+
+.fi-modal-window .editorWrap {
+    @apply border-t border-brand-accent/20 md:border-0;
+}
+
+.fi-modal-content {
+    @apply p-0 mt-5 mb-10 md:p-6 md:my-0 z-0;
+}
+
+.fi-modal-footer {
+    @apply bg-brand-secondary md:bg-transparent border-none py-0 z-0 w-full rounded-none text-center;
+}
+
+.fi-modal-close-overlay + div {
+    @apply z-[10000];
+}
+
+/* Otherwise you see white in the corners */
+.fi-modal-window {
+    @apply !bg-transparent ring-0;
+}
+
+.fi-modal-window:before {
+    @apply btn-retro-lg content-[''] bg-brand-secondary absolute inset-0 z-[-2];
+}
+
+/**** Form Styles ****/
+.fi-fo-field-wrp-label > span {
+    @apply text-inherit;
+}
+
+.fi-input-wrp {
+    @apply !bg-brand-darkest ring-0 focus:ring-offset-0 focus:ring-0 btn-retro;
+}
+
+.fi-input-wrp .fi-input, .fi-input-wrp textarea, .fi-input-wrp select {
+    @apply no-border-focus block w-full py-3 text-sm text-white sm:p-5 placeholder:text-neutral focus:ring-offset-0 focus:ring-0;
+}
+
+.fi-input-wrp select {
+    @apply sm:py-4;
+}
+
+.fi-input-wrp .fi-input[type="date"]::-webkit-calendar-picker-indicator {
+    @apply opacity-50;
+}
+
+.fi-input-wrp .fi-input[type="date"] {
+    color-scheme: dark;
+    @apply text-inherit;
+}
+
+.fi-fo-radio label {
+    @apply w-full;
+}
+
+.fi-fo-radio :checked + label {
+    @apply bg-brand-accent text-white;
+}
+
+.fi-fo-radio :checked + label > span {
+    @apply text-white;
+}
+
+.fi-fo-radio > div {
+    @apply block;
+}
+
+.fi-fo-radio > div {
+    @apply flex-1;
+}
+
+.fi-input {
+    @apply !bg-transparent focus:bg-transparent;
+}
+
+.fi-section {
+    @apply !bg-brand-darkest/20 btn-retro-lg;
+}
+
+#createFolders .fi-btn {
+    @apply justify-start pl-2;
+}
+
+#createFolders .fi-btn .fi-btn-label {
+    @apply ml-2;
+}
+
+#createFolders .fi-fo-field-wrp .folder-selection {
+    @apply h-80 p-0.5 overflow-scroll columns-auto;
+}
+
+/**** Dark Mode Overrides ****/
+
+.dark\:ring-white\/20.fi-input-wrp {
+    @apply !ring-0;
+}
+
+.dark\:bg-gray-900:where(.dark, .dark *) {
+    @apply !bg-brand-darkest/40 !ring-0;
+}
+
+.dark\:divide-white\/20:where(.dark, .dark *) > :not([hidden]) ~ :not([hidden]) {
+    border-color: transparent !important;
+}
+
+/**** Table Repeater ****/
+.table-repeater-container {
+    @apply !shadow-none !ring-0;
+}

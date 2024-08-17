@@ -1,0 +1,17 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    checkMissingIterableValueType: false
+
+    level: 7
+
+    paths:
+        - app
+        - config
+        - bootstrap
+        - database/factories
+        - routes
+
+    ignoreErrors:
+        - '#Undefined variable: \$this#'

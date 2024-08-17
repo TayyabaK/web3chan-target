@@ -1,0 +1,178 @@
+@import url(https://fonts.bunny.net/css?family=anonymous-pro:400,700);
+@import 'filament.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Anonymous Pro', monospace;
+    @apply text-base text-neutral;
+}
+
+body {
+    @apply bg-brand-darkest;
+}
+
+/* Reset phpdebugbar styles */
+.phpdebugbar * {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* @layer components { */
+/* Generated with https://css-generators.com/custom-corners/ */
+.btn-retro {
+    clip-path: polygon(
+        0 4px,
+        4px 4px,
+        4px 0,
+        calc(100% - 4px) 0,
+        calc(100% - 4px) 4px,
+        100% 4px,
+        100% calc(100% - 4px),
+        calc(100% - 4px) calc(100% - 4px),
+        calc(100% - 4px) 100%,
+        4px 100%,
+        4px calc(100% - 4px),
+        0 calc(100% - 4px)
+    );
+}
+
+.btn-retro-sm {
+    clip-path: polygon(
+        0 2px,
+        2px 2px,
+        2px 0,
+        calc(100% - 2px) 0,
+        calc(100% - 2px) 2px,
+        100% 2px,
+        100% calc(100% - 2px),
+        calc(100% - 2px) calc(100% - 2px),
+        calc(100% - 2px) 100%,
+        2px 100%,
+        2px calc(100% - 2px),
+        0 calc(100% - 2px)
+    );
+}
+
+.btn-retro-lg {
+    clip-path: polygon(
+        0 8px,
+        8px 8px,
+        8px 0,
+        calc(100% - 8px) 0,
+        calc(100% - 8px) 8px,
+        100% 8px,
+        100% calc(100% - 8px),
+        calc(100% - 8px) calc(100% - 8px),
+        calc(100% - 8px) 100%,
+        8px 100%,
+        8px calc(100% - 8px),
+        0 calc(100% - 8px)
+    );
+}
+
+/* } */
+
+/* @layer utilities { */
+.flex-center {
+    @apply flex items-center;
+}
+
+.flex-center-between {
+    @apply flex items-center justify-between;
+}
+
+.container {
+    @apply mx-auto max-w-8xl px-4 sm:px-6 lg:px-8;
+}
+/* } */
+
+/* styling the scrollbar width and height */
+.scrollbar-thin::-webkit-scrollbar {
+    @apply size-1;
+}
+
+/* adding background to track */
+.scrollbar-track::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+/* styling scrollbar thumb */
+.scrollbar-thumb::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 bg-brand-accent/50;
+}
+
+/* adding hover state on thumb */
+.scrollbar-hover::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-accent/70;
+}
+
+.replies-list .reply:first-child .reply-border {
+    @apply mt-12;
+}
+
+.replies-list .reply:last-child .reply-border {
+    @apply hidden;
+}
+
+.replies-list .reply:last-child .actions {
+    @apply mb-0;
+}
+
+.no-border-focus {
+    @apply border-none outline-none outline-transparent focus:border-none focus:outline-none focus:ring-0;
+}
+
+
+.disabled {
+    @apply cursor-not-allowed opacity-50;
+}
+
+/* Highlighted Lookups */
+.highlighted-lookup::selection {
+    color: white;
+    background: #5d4b97;
+}
+
+.highlighted-lookup::-moz-selection {
+    color: white;
+    background: #5d4b97;
+}
+
+/* TableRepeater */
+.table-repeater-row {
+    @apply divide-red-500;
+}
+
+/* TableRepeater */
+
+#tipAmountForm .bg-base-200 {
+    @apply bg-brand-darkest;
+}
+
+#tipAmountForm input {
+    @apply bg-brand-darkest text-neutral;
+}
+
+/* Content Editable */
+
+[contenteditable][placeholder]:empty {
+    @apply before:content-[attr(placeholder)] before:absolute before:text-brand-accent before:font-semibold before:animate-pulse;
+}
+
+/* Filepond Dark theme styles */
+.dark .filepond--panel-root {
+    @apply bg-brand-secondary;
+}
+
+.filepond--root:is(.dark *) {
+    @apply bg-brand-secondary ring-0 mb-0;
+}
+
+.filepond--root:is(.dark *) .filepond--credits {
+    @apply hidden;
+}
+
