@@ -1,8 +1,9 @@
-import * as solanaWeb3 from '@solana/web3.js';
 import { AlpineComponent } from 'alpinejs';
+import * as solanaWeb3 from '@solana/web3.js';
 
 interface Wallet {
     balance: number;
+    walletAddress: string | null;
     init(): void;
     connectWallet(): void;
     isPhantomInstalled(): boolean;
@@ -13,9 +14,17 @@ interface Wallet {
 
 const phantomWalletInstance: Wallet | AlpineComponent<Wallet> = {
     balance: 0,
+    walletAddress: null, // Initialize walletAddress to null
+
     init() {
-        this.$nextTick(async () => {
+        this.$nextTick(() => {
             console.log('Phantom Wallet Component Initialized');
+
+            // Check if public key exists in localStorage
+            const storedPublicKey = localStorage.getItem('phantomWalletPublicKey');
+            if (storedPublicKey) {
+                this.walletAddress = storedPublicKey;
+            }
 
             window.addEventListener('tipPostAuthor', (e: CustomEvent) => {
                 console.log('Tip event received', e.detail);
@@ -25,10 +34,12 @@ const phantomWalletInstance: Wallet | AlpineComponent<Wallet> = {
             });
         });
     },
+
     connectWallet() {
         this.login();
         this.retrieveBalance();
     },
+
     isPhantomInstalled() {
         const isPhantomInstalled = window.solana && window.solana.isPhantom;
 
@@ -40,6 +51,7 @@ const phantomWalletInstance: Wallet | AlpineComponent<Wallet> = {
         console.log('Phantom wallet is installed');
         return true;
     },
+
     async login() {
         if (!this.isPhantomInstalled()) {
             return;
@@ -47,12 +59,19 @@ const phantomWalletInstance: Wallet | AlpineComponent<Wallet> = {
 
         try {
             const resp = await window.solana.connect();
-            console.log('Account: ' + resp.publicKey.toString());
+            const publicKey = resp.publicKey.toString();
+            console.log('Account: ' + publicKey);
+
+            // Store the public key in localStorage
+            localStorage.setItem('phantomWalletPublicKey', publicKey);
+            this.walletAddress = publicKey;
+            console.log('Public key stored in localStorage: ' + publicKey);
         } catch (err) {
             console.log('User rejected request');
             console.log(err);
         }
     },
+
     async getProvider() {
         if (!this.isPhantomInstalled()) {
             return;
@@ -61,6 +80,7 @@ const phantomWalletInstance: Wallet | AlpineComponent<Wallet> = {
         await window.solana.connect();
         return await window.solana;
     },
+
     async retrieveBalance() {
         this.isPhantomInstalled();
         if (!this.isPhantomInstalled()) {

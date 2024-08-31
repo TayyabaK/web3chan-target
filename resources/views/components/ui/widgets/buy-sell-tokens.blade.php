@@ -9,7 +9,10 @@
     :hasBackground="true"
     spacingY="4"
 >
-    <div x-data="{ balance: 0 }">
+    <div
+        x-data="phantomWalletComponent"
+        x-init="init()"
+    >
         <div class="flex justify-between gap-x-6">
             <div class="flex min-w-0 gap-x-4">
                 <img
@@ -36,11 +39,11 @@
 
         <div class="mt-4 space-y-4">
             <x-ui.button
-                label="Connect"
+                x-effect="$el.textContent = walletAddress ? (walletAddress.substring(0, 4) + '...' + walletAddress.substring(walletAddress.length - 4)) : 'Connect'"
                 color="accent"
                 size="lg"
                 :fullWidth="true"
-                @click="connectWallet"
+                @click="connectWallet()"
             />
         </div>
     </div>

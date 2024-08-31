@@ -27,12 +27,12 @@
 
         <div class="mt-8 grid">
             <x-ui.button
-                x-data
+                x-data="phantomWalletComponent"
                 label="Get Started"
                 type="button"
                 color="accent"
                 size="lg"
-                @click="alert('Connect Wallet')"
+                @click="connectWallet()"
             />
         </div>
     </div>
